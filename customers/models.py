@@ -11,8 +11,7 @@ class Customer(models.Model):
     address=models.TextField()
     phone=models.CharField(max_length=10)
     user=models.OneToOneField(User,related_name='customer_profile',on_delete=models.CASCADE)
-    priority=models.IntegerField(default=0)
-    delete_status=models.IntegerField(choice=DELETE_CHOICES,default=LIVE)
+    delete_status=models.IntegerField(choices=DELETE_CHOICES,default=LIVE)
     created_at=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now=True)
     
