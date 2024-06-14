@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>products</title>
+   <link rel="stylesheet" href="{% static 'css/product.css' %}">
+</head>
+<body>
+    <div id="main">
+      <div id="internal">
+        <img src="{% static 'images\category-2.jpg' %}" alt="" class="ima1">
+      
+        <button class="buy">BUY</button>
+        <button class="cart">ADD TO CART</button>
+      </div>
+      <div class="data">
+      <div class="inner-data">
+        <h3 style="color: rgb(247, 59, 7);">Addidas superior shoes</h3>
+        <ul>
+          <li>data1</li>
+          <li>data2</li>
+          <li>data3</li>
+          <li>data4</li>
+          <li>data5</li>
+        </ul>
+        
+      </div>
+      </div>
+      <div class="price">
+         <h3 style="color: rgb(247, 59, 7);">Price:1300/-</h3>
+      </div>
+    </div>
+</body>
+</html>
