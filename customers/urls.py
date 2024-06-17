@@ -19,7 +19,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('',views.index,name='home'),
-     path('products/',views.list_products,name='productList'),
-     path('detailed/<pk>',views.detail_product,name='detailedProduct'),
+     path('account/',views.account,name='account'),
+     path('logout/',views.sign_out,name='logout')
 ]
