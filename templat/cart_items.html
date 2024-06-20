@@ -1,14 +1,16 @@
 {% load static %}
+{% load multiply %}
+{% load get_total %}
 <!-- Cart items details -->
     <div class="small-container cart-page">
-        
+        {% if cart and cart.added_item.all %}
         <table>
             <tr>
                 <th>Product</th>
                 <th>Quantity</th>
                 <th>Subtotal</th>
             </tr>
-            {% for cart_item in owner.added_item.all %}
+            {% for cart_item in cart.added_item.all %}
             <tr>
                 <td>
                     <div class="cart-info">
@@ -17,36 +19,34 @@
                             <p>{{ cart_item.product.title }}</p>
                             <small>{{ cart_item.product.price }}</small>
                             <br>
-                            <a href="">Remove</a>
+                            <a href="{% url 'remove_item' cart_item.id %}">Remove</a>
                         </div>
                     </div>
                 </td>
                 <td><input type="number" disabled value="{{ cart_item.quantity }}"></td>
-                <td>{{ cart_item.product.price }}</td>
+                <td>{% multiply cart_item.product.price  cart_item.quantity %}</td>
             </tr>
             {% endfor %}
         </table>
         <div class="total-price">
             <table>
                 <tr>
-                    <td>Subtotal</td>
-                    <td>$200.00</td>
-                </tr>
-                <tr>
-                    <td>Tax</td>
-                    <td>$35.00</td>
-                </tr>
-                <tr>
                     <td>Total</td>
-                    <td>$230.00</td>
+                    <td>{% get_total cart %}</td>
                 </tr>
                 <tr>
                     <td colspan="2"></td>
-                    <td><a href=""><button class="btn" style="border: none;">CONFIRM</button></a></td>
+                    <form action="{% url 'checkout_cart' %}" method="post" enctype="multipart/form-data" >
+                        {% csrf_token %}
+                        <input type="hidden" name="total" value="{% get_total cart %}">
+                    <td><a href=""><button class="btn" type="submit" style="border: none;">CHECK OUT</button></a></td>
+                    </form>
+                    
                 </tr>
             </table>
         </div>
-
-       
-    
+    {% else %}
+       <p>cart is empty</p>
+    {% endif %}
+   
     </div>
