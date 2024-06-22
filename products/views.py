@@ -29,5 +29,18 @@ def detail_product(request,pk):
     return render(request,'product_details.html',context)
 
 
+def search(request):
+    if request.POST:
+        key=request.POST.get('search')
+    page=1
+    if request.GET:
+        page=request.GET.get('page',1)
+    product_list=Product.objects.filter(title__contains=key)
+    product_paginator=Paginator(product_list,8)
+    product_list=product_paginator.get_page(page)
+    context={'products':product_list}
+    return render(request,'product_layout.html',context)   
+
+
 
 

@@ -20,5 +20,5 @@ from . import views
 
 urlpatterns = [
      path('about/',views.about_us,name='about'),
-     path('conatct/',views.contact,name='contact')
+    
 ]
