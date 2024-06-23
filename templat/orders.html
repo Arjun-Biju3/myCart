@@ -1,12 +1,47 @@
 {% extends 'blank_layout.html' %}
  {% block content %}
+  {% load static %}
+  {% load get_status %}
+  <!-- Cart items details -->
   {%if messages %}
-   {% for message in messages %}
-<p class="{{ message.tags }}">
-   {{ message }}
-</p>
-   {% endfor %}
-  {% else %} 
-  {% include 'order_container.html' %}
-  {% endif %}
+  {% for message in messages %}
+  <div class="mes {{ message.tags }}"><h2> {{ message }}</h2></div>
+
+  {% endfor %}     
+  {% endif %} 
+      <div class="small-container cart-page">
+ 
+          {% if orders %}
+          <table>
+              <tr>
+                  <th>Order ID</th>
+                  <th>Date</th>
+                  <th>Total price</th>
+                  <th>Status</th>
+                  <th>Operation</th>
+              </tr>
+             {% for items in orders %}
+              <tr>
+                  <td>
+                    <p>{{ items.id }}</p>
+                  </td>
+                  <td>
+                   <p>{{ items.created_at }}</p>      
+                  </td>
+                  <td>
+                  <p>{{ items.total }}</p>
+                  </td>
+                  <td>
+                      <p>{% get_status items.order_status %}</p> 
+                  </td>
+                  <td><a href="{% url 'cancel' items.id %}"><button class="cancel">CANCEL</button></a></td>
+              </tr>
+     {% endfor %}
+          </table>
+          {% else %}
+          <p>No orders</p>
+          <br><br><br>
+          {% endif %}
+      </div>
+ 
 {% endblock %}

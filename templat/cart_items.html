@@ -36,7 +36,7 @@
                 </tr>
                 <tr>
                     <td colspan="2"></td>
-                    <form action="{% url 'checkout_cart' %}" method="post" enctype="multipart/form-data" >
+                    <form action="{% url 'payment' %}" method="post" enctype="multipart/form-data" >
                         {% csrf_token %}
                         <input type="hidden" name="total" value="{% get_total cart %}">
                     <td><a href=""><button class="btn" type="submit" style="border: none;">CHECK OUT</button></a></td>
