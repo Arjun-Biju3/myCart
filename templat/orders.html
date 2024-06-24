@@ -18,23 +18,21 @@
                   <th>Date</th>
                   <th>Total price</th>
                   <th>Status</th>
-                  <th>Operation</th>
               </tr>
              {% for items in orders %}
               <tr>
                   <td>
-                    <p>{{ items.id }}</p>
+                    <p>{{ items.id }}</p><br>
                   </td>
                   <td>
-                   <p>{{ items.created_at }}</p>      
+                   <p>{{ items.created_at }}</p> <br>     
                   </td>
                   <td>
-                  <p>{{ items.total }}</p>
+                  <p>{{ items.total }}</p><br>
                   </td>
                   <td>
-                      <p>{% get_status items.order_status %}</p> 
+                      <br><p>{% get_status items.order_status %}</p> <br> <a href="{% url 'cancel' items.id %}"><button class="cancel">CANCEL</button></a>
                   </td>
-                  <td><a href="{% url 'cancel' items.id %}"><button class="cancel">CANCEL</button></a></td>
               </tr>
      {% endfor %}
           </table>

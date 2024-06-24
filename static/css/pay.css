@@ -1,79 +1,170 @@
 
-.main
-{
-    margin: 0;
-  
-}
-.details
-{
-    border-radius: 5px;
-    width: 500px;
-    height: 470px;
-    position: absolute;
-    top: 10%;
-    left: 5%;
-    box-shadow: 0 8px 5px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    padding: 15px;
-}
-.details input
-{
-    width: 230px;
-    height: 30px;
-   
-}
-.details textarea
-{
-    width: 495px;
-    height: 100px;
-}
-.row
-{
-    display: flex;
-    gap: 30px;
-}
-input,textarea
-{
-    border: 1px solid rgb(117, 114, 114);
-    border-radius: 5px;
-}
-.pay
-{
-    border-radius: 5px;
-    width: 500px;
-    height: 400px;
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    box-shadow: 0 8px 5px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    padding: 15px;
-}
-td,th
-{
-    padding-right: 160px;
-    padding-bottom: 20px;
+        .details
+        {
+            border-radius: 5px;
+            width: 500px;
+            height: 470px;
+            position: absolute;
+            top: 10%;
+            left: 5%;
+            box-shadow: 0 8px 5px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            padding: 15px;
+        }
+        .details input
+        {
+            width: 230px;
+            height: 30px;
+           
+        }
+        .details textarea
+        {
+            width: 495px;
+            height: 100px;
+        }
+        .row
+        {
+            display: flex;
+            gap: 30px;
+        }
+        input,textarea
+        {
+            border: 1px solid rgb(117, 114, 114);
+            border-radius: 5px;
+        }
+        .pay
+        {
+            border-radius: 5px;
+            width: 500px;
+            height: 400px;
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            box-shadow: 0 8px 5px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            padding: 15px;
+        }
+        td,th
+        {
+            padding-right: 160px;
+            padding-bottom: 20px;
+            
+        }
+        .btn1
+        {
+            width: 500px;
+            height: 35px;
+            border: none;
+            background-color: rgb(7, 173, 7);
+            
+        }
+        .btn2
+        {
+            width: 500px;
+            height: 35px;
+            border: none;
+            background-color: rgb(14, 136, 243);
+            
+        }
+        .footer
+        {
+            position: absolute;
+            top:72%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        @media only screen and (max-width: 800px){
+               
+            .pay
+            {
+                border-radius: 5px;
+                width: 500px;
+                height: 350px;
+                position: absolute;
+                top: 100%;
+                left: 5%;
+                box-shadow: 0 8px 5px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+                padding: 15px;
+            }
     
-}
-.btn1
-{
-    width: 500px;
-    height: 35px;
-    border: none;
-    background-color: rgb(7, 173, 7);
-    
-}
-.btn2
-{
-    width: 500px;
-    height: 35px;
-    border: none;
-    background-color: rgb(14, 136, 243);
-    
-}
-.footer
-{
-    position: absolute;
-    top:72%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
+         }
+                @media only screen and (max-width: 600px){
+                    .details 
+                    {
+                      width: 400px;
+                    }
+                    .pay
+                    {
+                        width: 370px;
+                    }
+                  
+                    .btn1 ,.btn2
+                    {
+                        width: 350px;
+                    }
+                 .details textarea 
+                 {
+                    width: 370px;
+                 }
+                 td,th
+                 {
+                     padding-right: 100px;
+                     padding-bottom: 20px;
+                     
+                 }
+                 .pay
+            {
+                border-radius: 5px;
+                width: 400px;
+                height: 350px;
+                position: absolute;
+                top: 105%;
+                left: 5%;
+                box-shadow: 0 8px 5px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+                padding: 15px;
+            }
+        }
+               @media only screen and (max-width: 320px){
+                    .main
+                    {
+                      padding: 0;
+                    }
+                    .details 
+                    {
+                      width: 315px;
+                    }
+                    .pay
+                    {
+                        width: 270px;
+                    }
+                  
+                    .btn1 ,.btn2
+                    {
+                        width: 310px;
+                    }
+                 .details textarea 
+                 {
+                    width: 250px;
+                 }
+                 td,th
+                 {
+                     padding-right: 70px;
+                     padding-bottom: 20px;
+                     
+                 }
+                 .pay
+                 {
+                border-radius: 5px;
+                width: 315px;
+                height: 350px;
+                position: absolute;
+                top: 105%;
+                left: 5%;
+                box-shadow: 0 8px 5px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+                padding: 15px;
+                }
+                input 
+                {
+                    overflow: hidden;
+                }
+               }
+             

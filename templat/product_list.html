@@ -4,17 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .search
-        {
-            position: absolute;
-            top: 16%;
-            left: 35%;
-            width: 350px;
-            border: 3px solid rgb(228, 222, 222);
-            height: 35px;
-        }
-    </style>
 </head>
 <body>
     {% load static %}
@@ -22,7 +11,7 @@
 <div class="small-container">
      <form action="{% url 'search' %}" method="post">
         {% csrf_token %}
-        <input type="text" name="search" placeholder="Serach" class="search">
+        <input type="text" name="search" placeholder="Serach..." class="search">
      </form>
     <div class="row row-2">
         <h2>All Products</h2>
