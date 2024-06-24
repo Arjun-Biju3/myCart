@@ -1,0 +1,41 @@
+.mes
+{
+    position: absolute;
+    top: 18%;
+    left: 40%;
+    width: 300px;
+    height: 30px;
+}
+@media only screen and (max-width: 320px){
+    .mes
+    {
+        left: 9%;
+        z-index: -100;
+    }
+}
+@media only screen and (min-width: 375px){
+    .mes
+    { 
+        z-index: -100;
+        left: 9%;
+    }
+}
+@media only screen and (min-width: 1024px){
+    .mes
+    { 
+        left: 40%;
+    }
+}
+/* .mes h1{
+    position: absolute;
+    top: 30%;
+    left: 45%;
+}*/
+.cancel
+{
+    background-color: red;
+    border: none;
+    border-radius: 15px;
+    width: 100px;
+    height: 35px;
+}

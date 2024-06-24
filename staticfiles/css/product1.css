@@ -1,0 +1,44 @@
+
+.search
+{
+    position: absolute;
+    top: 16%;
+    left: 35%;
+    width: 350px;
+    height: 35px;
+    border-radius: 10px;
+}
+.search:hover
+{
+    border: 2px solid black;
+}
+@media only screen and (max-width: 320px){
+    .search
+    {
+        width: 150px;
+        left: 10%;
+       
+    }
+    .search:hover
+    {
+        border: 2px solid black;
+    }
+}
+@media only screen and (min-width: 375px){
+    .search
+    {
+        width: 150px;
+        left: 10%;
+       
+    }
+    .search:hover
+    {
+        border: 2px solid black;
+    }
+}
+@media only screen and (min-width: 1024px){
+    .mes
+    { 
+        left: 40%;
+    }
+}
