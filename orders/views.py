@@ -5,7 +5,7 @@ from products.models import Product
 from django.contrib.auth.decorators import login_required
 from customers.models import DeliveryAddress
 
-
+@login_required(login_url='account')  
 def cart(request):
     user=request.user
     customer=user.customer_profile
@@ -16,12 +16,14 @@ def cart(request):
     context={'cart':cart_obj}
     return render(request,'cart.html',context)
 
+@login_required(login_url='account')  
 def remove_item(requset,pk):
     item=OrderedItem.objects.get(pk=pk)
     if item:
         item.delete()
     return redirect('cart')
 
+@login_required(login_url='account')  
 def checkout_cart(request):
     if request.POST:
         fname=request.POST.get('fname')
@@ -60,6 +62,7 @@ def checkout_cart(request):
             messages.error(request,status_message)
     return redirect('orders')
 
+@login_required(login_url='account')  
 def add_to_cart(request):
     if request.POST:
         user=request.user
@@ -92,7 +95,8 @@ def view_orders(request):
     all_orders=Order.objects.filter(owner=customer).exclude(order_status=Order.CART_STAGE) 
     context={'orders':all_orders}
     return render(request,'orders.html',context)
-        
+ 
+@login_required(login_url='account')         
 def payment(request):
     if request.POST:
         user=request.user
@@ -107,7 +111,7 @@ def payment(request):
         context={'total':total_price,'cart':cart_obj,'delivery':delivery}
     return render(request,'payment.html',context)
  
-    
+@login_required(login_url='account')    
 def cancel_order(request,pk):
     order_obj=Order.objects.get(pk=pk)
     if order_obj.order_status ==Order.ORDER_DELIVERED:
