@@ -7,17 +7,19 @@
     width: 350px;
     height: 35px;
     border-radius: 10px;
+    visibility: hidden;
 }
 .search:hover
 {
     border: 2px solid black;
 }
+/*
 @media only screen and (max-width: 320px){
     .search
     {
         width: 150px;
         left: 10%;
-       
+        
     }
     .search:hover
     {
@@ -42,3 +44,4 @@
         left: 40%;
     }
 }
+*/

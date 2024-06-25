@@ -5,8 +5,9 @@
     left: 40%;
     width: 300px;
     height: 30px;
+    visibility: hidden;
 }
-@media only screen and (max-width: 320px){
+/*@media only screen and (max-width: 320px){
     .mes
     {
         left: 9%;
