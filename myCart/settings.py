@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-bw68@4ztk$jv=w16%nu)_np=paq78#)q_074erl2b&%(sj^m$x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -79,14 +80,14 @@ WSGI_APPLICATION = 'myCart.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-'''DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
-}'''
+}
 
-DATABASES = {'default': dj_database_url.config(default='postgresql://mycart_zsdk_user:CMfciRwHwQYxRxUeXmpJoyuVfS8l5xpJ@dpg-cpsjpt88fa8c7398iqt0-a.oregon-postgres.render.com/mycart_zsdk')}
+#DATABASES = {'default': dj_database_url.config(default='postgresql://mycart_zsdk_user:CMfciRwHwQYxRxUeXmpJoyuVfS8l5xpJ@dpg-cpsjpt88fa8c7398iqt0-a.oregon-postgres.render.com/mycart_zsdk')}
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
@@ -122,16 +123,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
 STATICFILES_DIRS=[
-    BASE_DIR/ "static"
+    os.path.join(BASE_DIR,'static')
     ]
-STATIC_ROOT=BASE_DIR/"staticfiles"
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
-MEDIA_ROOT='/media/'
-
+MEDIA_URL='/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
-
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
