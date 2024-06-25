@@ -9,7 +9,7 @@
 @media only screen and (max-width: 320px){
     .mes
     {
-        left: 9%;
+        left: 5%;
         z-index: -100;
     }
 }
@@ -17,7 +17,7 @@
     .mes
     { 
         z-index: -100;
-        left: 9%;
+        left: 5%;
     }
 }
 @media only screen and (min-width: 1024px){
